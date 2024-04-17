@@ -1,0 +1,23 @@
+create table cd (
+id int primary key not null auto_increment,
+title varchar(255) not null,
+description varchar(255),
+year varchar(4),
+artist varchar(255),
+price float);
+
+create table artist (
+id int primary key not null auto_increment,
+first_name varchar(255),
+last_name varchar(255),
+instrument varchar(255)
+);
+
+create table artist_cd (
+cd_id int,
+artist_id int,
+
+foreign key (cd_id) references cd(id),
+foreign key (artist_id) references artist(id),
+primary key (cd_id, artist_id)
+);
