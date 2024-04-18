@@ -1,13 +1,16 @@
 package entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "cd")
 public class Cd {
     @Id
+    @GeneratedValue()
     private int id;
     private String title;
     private String description;
