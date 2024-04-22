@@ -1,16 +1,12 @@
 package entities;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
-@Table(name = "cd")
 public class Cd {
     @Id
-    @GeneratedValue()
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String title;
     private String description;
@@ -19,6 +15,14 @@ public class Cd {
     private float price;
 
     public Cd() {
+    }
+
+    public Cd(String title, String description, String year, String artist, float price) {
+        this.title = title;
+        this.description = description;
+        this.year = year;
+        this.artist = artist;
+        this.price = price;
     }
 
     public int getId() {
