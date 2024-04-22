@@ -6,7 +6,7 @@ import javax.persistence.*;
 @Entity
 public class Artist {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String first_name;
     private String last_name;

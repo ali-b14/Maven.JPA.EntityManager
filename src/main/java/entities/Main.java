@@ -11,13 +11,15 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class Main {
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(Main.class, args);
     }
 
 @Bean
     CommandLineRunner commandLineRunner(CdRepository cdRepository){
         return args -> {
-            Cd classic = new Cd("NewYork", "BigApple", "1956", "Frank Sinatra", 39.99F);
+
+            Cd classic = new Cd("NY", "Brooklyn", "1958", "Trank Pinatra", 15.99F);
+            cdRepository.save(classic);
             System.out.println(classic);
         };
     }
